@@ -1,0 +1,17 @@
+{
+  "name": "codigo-limpo-com-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch desafios/*.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "tsx": "^4.11.2",
+    "typescript": "^5.4.5"
+  }
+}
