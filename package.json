@@ -10,6 +10,6 @@
   },
   "scripts": {
     "prepare": "husky",
-    "lint:all": "npm run lint:fix --prefix ./codigo-limpo-no-react"
+    "lint:all": "npm run lint:check --prefix ./codigo-limpo-no-react"
   }
 }
