@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply antialiased;
+}
+
 body {
   @apply bg-zinc-100 text-zinc-900;
+}
+
+*::-webkit-scrollbar {
+  @apply w-4;
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-zinc-100;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-zinc-400 rounded-3xl border-[6px] border-transparent hover:bg-zinc-600;
 }
