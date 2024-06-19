@@ -6,18 +6,22 @@ html {
   @apply antialiased;
 }
 
+* {
+  @apply scroll-smooth;
+}
+
 body {
   @apply bg-zinc-100 text-zinc-900;
 }
 
 *::-webkit-scrollbar {
-  @apply w-4;
+  @apply w-4 h-4;
 }
 
 *::-webkit-scrollbar-track {
-  @apply bg-zinc-100;
+  @apply bg-transparent;
 }
 
 *::-webkit-scrollbar-thumb {
-  @apply bg-zinc-400 rounded-3xl border-[6px] border-transparent hover:bg-zinc-600;
+  @apply bg-zinc-300 rounded-full border-solid border-4 border-zinc-100 transition-colors hover:bg-zinc-400;
 }
