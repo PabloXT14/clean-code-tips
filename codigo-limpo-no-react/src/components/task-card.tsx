@@ -63,7 +63,7 @@ export const TaskCard = ({ todo }: TaskCardProps) => {
                   230 -
                   (230 *
                     calculatePercentage(todo.completedTasks, todo.totalTasks)) /
-                  100
+                    100
                 }
                 className={twMerge(
                   'fill-none stroke-[0.4rem]',
