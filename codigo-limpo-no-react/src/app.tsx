@@ -45,10 +45,21 @@ export function App() {
   return (
     <div className="flex h-screen w-full flex-col overflow-hidden border">
       <div className="mx-auto flex h-full max-w-[450px] flex-col">
-        <Header />
+        <Header
+          onCreateNewTodo={() => {
+            console.log('create new todo')
+          }}
+        />
 
         <main className="flex flex-1 flex-col overflow-hidden">
-          <Status />
+          <Status
+            taskStatus={{
+              onGoingTasks: 24,
+              inProcessTasks: 12,
+              completedTasks: 42,
+              canceledTasks: 8,
+            }}
+          />
 
           <h2 className="mb-3 text-xl font-semibold">Recent Tasks</h2>
 

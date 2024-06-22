@@ -1,6 +1,10 @@
 import { LuBadgePlus } from 'react-icons/lu'
 
-export const Header = () => {
+type HeaderProps = {
+  onCreateNewTodo: () => void
+}
+
+export const Header = ({ onCreateNewTodo }: HeaderProps) => {
   return (
     <header className="my-8 flex w-full items-center justify-between">
       <div className="flex items-center gap-4">
@@ -19,9 +23,7 @@ export const Header = () => {
       </div>
 
       <button
-        onClick={() => {
-          console.log('add new task')
-        }}
+        onClick={onCreateNewTodo}
         title="Add new task"
         className="flex items-center justify-center rounded-xl bg-zinc-200/60 p-3"
       >
