@@ -42,14 +42,14 @@ export function App() {
     },
   ])
 
+  function handleCreateNewTodo() {
+    console.log('create new todo')
+  }
+
   return (
     <div className="flex h-screen w-full flex-col overflow-hidden border">
       <div className="mx-auto flex h-full max-w-[450px] flex-col">
-        <Header
-          onCreateNewTodo={() => {
-            console.log('create new todo')
-          }}
-        />
+        <Header onCreateNewTodo={handleCreateNewTodo} />
 
         <main className="flex flex-1 flex-col overflow-hidden">
           <Status
