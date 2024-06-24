@@ -4,6 +4,8 @@ import { Footer } from './components/footer'
 import { Status } from './components/status'
 import { Todo } from './types/todo'
 import { TaskCard } from './components/task-card'
+import { InputCustomized } from './components/input-customized'
+import * as Input from './components/input-composition'
 
 export function App() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -50,6 +52,18 @@ export function App() {
     <div className="flex h-screen w-full flex-col overflow-hidden border">
       <div className="mx-auto flex h-full max-w-[450px] flex-col">
         <Header onCreateNewTodo={handleCreateNewTodo} />
+
+        {/* <InputCustomized
+          label="Nome"
+          errorMessage="Digite seu nome corretamente"
+          icon={<div />}
+        /> */}
+
+        <Input.Root className="flex flex-col">
+          <Input.Label text="Nome" htmlFor="input-name" />
+          <Input.Control id="input-name" placeholder="Nome" />
+          <Input.ErrorMessage text="Digite seu nome corretamente" />
+        </Input.Root>
 
         <main className="flex flex-1 flex-col overflow-hidden">
           <Status
