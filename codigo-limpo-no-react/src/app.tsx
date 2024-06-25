@@ -4,8 +4,6 @@ import { Footer } from './components/footer'
 import { Status } from './components/status'
 import { Todo } from './types/todo'
 import { TaskCard } from './components/task-card'
-import { InputCustomized } from './components/input-customized'
-import * as Input from './components/input-composition'
 
 export function App() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -48,22 +46,12 @@ export function App() {
     console.log('create new todo')
   }
 
+  const isTodosListEmpty = todos.length === 0
+
   return (
     <div className="flex h-screen w-full flex-col overflow-hidden border">
       <div className="mx-auto flex h-full max-w-[450px] flex-col">
         <Header onCreateNewTodo={handleCreateNewTodo} />
-
-        {/* <InputCustomized
-          label="Nome"
-          errorMessage="Digite seu nome corretamente"
-          icon={<div />}
-        /> */}
-
-        <Input.Root className="flex flex-col">
-          <Input.Label text="Nome" htmlFor="input-name" />
-          <Input.Control id="input-name" placeholder="Nome" />
-          <Input.ErrorMessage text="Digite seu nome corretamente" />
-        </Input.Root>
 
         <main className="flex flex-1 flex-col overflow-hidden">
           <Status
@@ -85,6 +73,12 @@ export function App() {
               </li>
             ))}
           </ul>
+
+          {isTodosListEmpty && (
+            <div className="mb-6 flex h-full w-full items-center justify-center rounded-md border-2 border-dashed border-zinc-500">
+              <p className="text-sm/4 text-zinc-500">No tasks yet</p>
+            </div>
+          )}
         </main>
 
         <Footer />
