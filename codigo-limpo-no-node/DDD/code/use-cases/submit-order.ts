@@ -1,4 +1,5 @@
 import { Order } from "../domain/purchases/order"
+import { OrdersRepository } from "../repositories/orders-repository"
 
 interface SubmitOrdersRequest {
   customerDocument: string
@@ -6,9 +7,11 @@ interface SubmitOrdersRequest {
 }
 
 export class SubmitOrder {
+  constructor(private ordersRepository: OrdersRepository) { }
+
   async execute({ customerDocument, total }: SubmitOrdersRequest) {
     const order = new Order({ total, customerDocument })
 
-    // Persistir no banco de dados
+    this.ordersRepository.create(order)
   }
 }
